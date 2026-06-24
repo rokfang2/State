@@ -32,3 +32,15 @@ class Door:
   def notify_observers(self):
     for observer in self._observers:
       observer(self.status())
+
+  def click(self):
+    self._state.click(self)
+
+  def complete(self):
+    self._state.complete
+
+  def timeout(self):
+    self._state.timeout(self)
+
+  def status(self) ->  str:
+    return self._state.status()
