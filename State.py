@@ -44,3 +44,12 @@ class Door:
 
   def status(self) ->  str:
     return self._state.status()
+
+class DoorClosed(DoorState):
+  def click(self, door):
+    print("[Closed] -> Clicou: Abrindo a porta...")
+    door.set_state(DoorOpening())
+
+  def complete(self, door): pass
+  def timeout(self, door)> pass
+  def status(self) -> str: return "Closed"
